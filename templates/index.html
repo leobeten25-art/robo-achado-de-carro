@@ -1,0 +1,114 @@
+
+<!doctype html>
+<html lang="pt-BR">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <meta name="theme-color" content="#111827">
+  <title>Robô Achado de Carro</title>
+  <link rel="manifest" href="/static/manifest.json">
+  <link rel="stylesheet" href="/static/style.css">
+</head>
+<body>
+  <header class="top">
+    <div>
+      <h1>Robô Achado de Carro</h1>
+      <p>Curadoria rápida pelo celular</p>
+    </div>
+    <div class="counter">
+      <strong id="count">{{ stats.mine }}/{{ stats.goal }}</strong>
+      <span>hoje</span>
+    </div>
+  </header>
+
+  <main>
+    <section class="card">
+      <h2>Nova promoção</h2>
+
+      <label class="upload">
+        <input id="image" type="file" accept="image/*" capture="environment">
+        <span>📷 Tirar foto / escolher print</span>
+      </label>
+
+      <div id="previewWrap" class="hidden">
+        <img id="preview" alt="Prévia do print">
+      </div>
+
+      <label>Link de afiliado</label>
+      <input id="link" type="url" placeholder="https://meli.la/..." autocomplete="off">
+
+      <button id="analyzeBtn" class="primary">Analisar oferta</button>
+      <div id="status"></div>
+    </section>
+
+    <section id="editCard" class="card hidden">
+      <h2>Confira os dados</h2>
+
+      <label>Nome limpo</label>
+      <input id="product" type="text">
+
+      <div class="grid2">
+        <div>
+          <label>Preço DE</label>
+          <input id="priceFrom" type="number" inputmode="decimal">
+        </div>
+        <div>
+          <label>Preço POR</label>
+          <input id="priceTo" type="number" inputmode="decimal">
+        </div>
+      </div>
+
+      <label>Condição</label>
+      <select id="payment">
+        <option value="pix">Pix</option>
+        <option value="installments">Parcelado</option>
+        <option value="none">Sem condição</option>
+      </select>
+
+      <label>Quantidade de parcelas</label>
+      <input id="installments" type="number" inputmode="numeric" placeholder="6">
+
+      <label>Cupom (opcional)</label>
+      <input id="coupon" type="text" placeholder="CÓDIGO">
+
+      <div id="warning"></div>
+
+      <button id="generateBtn" class="primary">Gerar promoção</button>
+    </section>
+
+    <section id="resultCard" class="card hidden">
+      <h2>Pronta para o WhatsApp</h2>
+      <textarea id="result" rows="13" readonly></textarea>
+      <div class="actions">
+        <button id="copyBtn" class="primary">Copiar</button>
+        <button id="saveBtn" class="secondary">Aprovar e salvar</button>
+      </div>
+      <div id="saveStatus"></div>
+    </section>
+
+    <section class="card">
+      <details>
+        <summary>Importar promoções dos outros curadores</summary>
+        <p class="muted">Cole o blocão do grupo para bloquear repetidos.</p>
+        <select id="groupDay">
+          <option value="today">Hoje</option>
+          <option value="yesterday">Ontem</option>
+        </select>
+        <textarea id="groupText" rows="8" placeholder="Cole aqui todas as promoções..."></textarea>
+        <button id="importBtn" class="secondary">Importar</button>
+        <div id="importStatus"></div>
+      </details>
+    </section>
+
+    <section class="card">
+      <details>
+        <summary>Histórico</summary>
+        <button id="historyBtn" class="secondary small">Atualizar histórico</button>
+        <div id="history"></div>
+      </details>
+    </section>
+  </main>
+
+  <script src="/static/app.js"></script>
+</body>
+</html>
