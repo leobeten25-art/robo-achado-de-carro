@@ -1,0 +1,9 @@
+{
+  "name": "Robô Achado de Carro",
+  "short_name": "Achado Carro",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#0b0f14",
+  "theme_color": "#111827",
+  "icons": []
+}
