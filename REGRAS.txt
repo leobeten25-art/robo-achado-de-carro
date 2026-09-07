@@ -1,0 +1,16 @@
+ROBÔ ACHADO DE CARRO — MOBILE V1
+
+- Entrada: print/foto + link de afiliado.
+- Meta: 40 promoções por dia.
+- Não filtrar por percentual, vendas ou avaliações.
+- Não repetir produto já mandado no mesmo dia por você ou outro curador.
+- Produto de ontem só entra se o preço de hoje não estiver pior.
+- Limpar títulos gigantes.
+- Preço sem centavos.
+- Pix: "De R$ X por R$ Y no Pix".
+- Parcelado: "De R$ X por R$ Y em 6x" (ou nº de parcelas visível).
+- Cupom: "🎟️ Use o Cupom: *CÓDIGO*".
+- Sem cupom: apagar a linha.
+- Link final: preservar exatamente o link de afiliado informado.
+- HEAD: padrão Achado de Carro, curta, inteligente, irônica/provocativa,
+  sem emoji e sem descrição óbvia do produto.

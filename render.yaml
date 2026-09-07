@@ -1,0 +1,12 @@
+
+services:
+  - type: web
+    name: robo-achado-de-carro
+    runtime: python
+    buildCommand: pip install -r requirements.txt
+    startCommand: gunicorn -b 0.0.0.0:$PORT app:app
+    envVars:
+      - key: OPENAI_API_KEY
+        sync: false
+      - key: OPENAI_MODEL
+        value: gpt-5.6
